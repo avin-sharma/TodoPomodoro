@@ -1,7 +1,14 @@
 <resources>
     <string name="app_name">TodoPomodoro</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_pomodoro">Pomodoro</string>
+    <string name="title_todo">ToDo</string>
+    <string name="title_statistics">Statistics</string>
     <string name="start_pomodoro">Start Pomodoro</string>
+
+
+    <!-- ... -->
+    <string name="facebook_application_id" translatable="false">193322817840538</string>
+    <!-- Facebook Application ID, prefixed by 'fb'.  Enables Chrome Custom tabs. -->
+    <string name="facebook_login_protocol_scheme" translatable="false">fb193322817840538</string>
+
 </resources>
