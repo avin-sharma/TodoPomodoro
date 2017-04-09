@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.concurrent.TimeUnit;
+
 
 public class PomodoroFragment extends Fragment {
 
@@ -28,8 +30,11 @@ public class PomodoroFragment extends Fragment {
         //Count down timer
         final CountDownTimer countDownTimer = new CountDownTimer(1500000, 1000) {
             public void onTick(long millisUntilFinished) {
-                String msg = "" + (int)((millisUntilFinished) / 1000 / 60) + ":" + (millisUntilFinished / 1000)%60;
-                mTimerTextView.setText(msg);
+                //String msg = "" + (int)((millisUntilFinished) / 1000 / 60) + ":" + (millisUntilFinished / 1000)%60;
+                String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(millisUntilFinished),
+                        TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) % TimeUnit.HOURS.toMinutes(1),
+                        TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) % TimeUnit.MINUTES.toSeconds(1));
+                mTimerTextView.setText(hms);
             }
 
             public void onFinish() {
